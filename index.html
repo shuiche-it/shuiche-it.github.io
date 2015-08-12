@@ -36,17 +36,26 @@
             top:-10px;
             color: #fdcccc;
         }
+        #navEffect{
+            top:-10px;
+            color: #fdcccc;
+        }
     </style>
     <script type="text/javascript">
         window.onload = function () {
             var nav = document.getElementById('nav');
             var aNav = nav.getElementsByTagName('a');
             for(var i=0; i<aNav.length; i++){
-                aNav[i].onclick = function () {
+                aNav[i].onmouseover = function () {
                     for(var i=0; i<aNav.length; i++){
                         aNav[i].className ='';
                     }
                     this.className = 'navEffect';
+                }
+                aNav[i].onmouseout = function () {
+                    for(var i=0; i<aNav.length; i++){
+                        aNav[i].className ='';
+                    }
                 }
             }
         }
@@ -55,7 +64,7 @@
 </head>
 <body>
 <nav id="nav" class="nav">
-    <a href="javascript:void (0)" class="navEffect">首页</a>
+    <a href="javascript:void (0)" class="navEffect" id="navEffect">首页</a>
     <a href="javascript:void (0)">个人简介</a>
     <a href="routes/resume.html">简历</a>
     <a href="javascript:void (0)">作品展示</a>

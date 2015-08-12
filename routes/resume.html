@@ -42,17 +42,26 @@
             height: 400px;
             background: red;
         }
+        #navEffect{
+            top:-10px;
+            color: #fdcccc;
+        }
     </style>
     <script type="text/javascript">
         window.onload = function () {
             var nav = document.getElementById('nav');
             var aNav = nav.getElementsByTagName('a');
             for(var i=0; i<aNav.length; i++){
-                aNav[i].onclick = function () {
+                aNav[i].onmousemove = function () {
                     for(var i=0; i<aNav.length; i++){
                         aNav[i].className ='';
                     }
                     this.className = 'navEffect';
+                };
+                aNav[i].onmouseout = function () {
+                    for(var i=0; i<aNav.length; i++){
+                        aNav[i].className ='';
+                    }
                 }
             }
         }
@@ -61,9 +70,9 @@
 </head>
 <body>
 <nav id="nav" class="nav">
-    <a href="../index.html" class="navEffect">首页</a>
+    <a href="../index.html">首页</a>
     <a href="javascript:void (0)">个人简介</a>
-    <a href="">简历</a>
+    <a href="javascript:void (0)" class="navEffect" id="navEffect">简历</a>
     <a href="javascript:void (0)">作品展示</a>
     <a href="javascript:void (0)">马新浩介绍</a>
     <a href="javascript:void (0)">马新浩媳妇</a>
