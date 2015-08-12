@@ -5,12 +5,28 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        *{padding: 0; margin: 0;}
-        a:link {color: white}
-        a:visited {color: white}
-        a:hover {color: white}
-        a:active {color: white}
-        .nav{
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        a:link {
+            color: white
+        }
+
+        a:visited {
+            color: white
+        }
+
+        a:hover {
+            color: white
+        }
+
+        a:active {
+            color: white
+        }
+
+        .nav {
             width: 100%;
             height: 70px;
             background: #000000;
@@ -18,11 +34,12 @@
             position: fixed;
             text-align: right;
         }
-        .nav a{
-            font-family: Arial, "微软雅黑","宋体";
+
+        .nav a {
+            font-family: Arial, "微软雅黑", "宋体";
             top: 0;
             transition: top 0.5s, color 0.5s;
-            -webkit-transition:top 0.5s, color 0.5s;
+            -webkit-transition: top 0.5s, color 0.5s;
             -moz-transition: top 0.5s, color 0.5s;
             position: relative;
             margin-right: 30px;
@@ -32,15 +49,18 @@
             font-weight: 900;
             color: #FFFFFF;
         }
-        #nav .navEffect{
-            top:-10px;
+
+        #nav .navEffect {
+            top: -10px;
             color: #fdcccc;
         }
-        #navEffect{
-            top:-10px;
+
+        #navEffect {
+            top: -10px;
             color: #fdcccc;
         }
-        header{
+
+        header {
             padding-top: 70px;
             width: 100%;
             height: 400px;
@@ -51,16 +71,16 @@
         window.onload = function () {
             var nav = document.getElementById('nav');
             var aNav = nav.getElementsByTagName('a');
-            for(var i=0; i<aNav.length; i++){
+            for (var i = 0; i < aNav.length; i++) {
                 aNav[i].onmousemove = function () {
-                    for(var i=0; i<aNav.length; i++){
-                        aNav[i].className ='';
+                    for (var i = 0; i < aNav.length; i++) {
+                        aNav[i].className = '';
                     }
                     this.className = 'navEffect';
                 };
                 aNav[i].onmouseout = function () {
-                    for(var i=0; i<aNav.length; i++){
-                        aNav[i].className ='';
+                    for (var i = 0; i < aNav.length; i++) {
+                        aNav[i].className = '';
                     }
                 }
             }
@@ -72,8 +92,8 @@
 <nav id="nav" class="nav">
     <a href="../index.html">首页</a>
     <a href="introduce.html">个人简介</a>
-    <a href="javascript:void (0)" class="navEffect" id="navEffect">简历</a>
-    <a href="showcase.html">作品展示</a>
+    <a href="resume.html">简历</a>
+    <a href="javascript:void (0)" class="navEffect" id="navEffect">作品展示</a>
     <a href="friends.html">好友</a>
     <a href="skill.html">技能</a>
     <a href="call.html">联系我</a>

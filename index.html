@@ -17,6 +17,7 @@
             color: white;
             position: fixed;
             text-align: right;
+            z-index: 10000;
         }
         .nav a{
             font-family: Arial, "微软雅黑","宋体";
@@ -40,7 +41,41 @@
             top:-10px;
             color: #fdcccc;
         }
+        header{
+            padding-top: 70px;
+            background-color: #ccc;
+        }
+        /*图片轮播*/
+        .rollBoxOne{
+            position: relative;
+            width: 1200px;
+            height: 600px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .rollBoxOne ul{
+            position: relative;
+            top: 0;
+        }
+        .rollBoxOne ul li{
+            list-style-type: none;
+        }
+        .rollBoxOne ol{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+        .rollBoxOne ol li {float: left;
+            list-style-type: none;
+            margin: 3px;
+            padding: 0 4px;
+            border: 1px solid black;
+            background: white;
+            cursor: pointer;
+        }
+        .rollBoxOne .active{background: red;}
     </style>
+    <script type="text/javascript" src="styles/move2.js"></script>
     <script type="text/javascript">
         window.onload = function () {
             var nav = document.getElementById('nav');
@@ -51,12 +86,64 @@
                         aNav[i].className ='';
                     }
                     this.className = 'navEffect';
-                }
+                };
                 aNav[i].onmouseout = function () {
                     for(var i=0; i<aNav.length; i++){
                         aNav[i].className ='';
                     }
                 }
+            }
+            /*图片轮播*/
+            var oImgFather = document.getElementById('imgFather');
+            var oBtnFather = document.getElementById('btn');
+            var aImg = oImgFather.getElementsByTagName('li');
+            var aBtn = oBtnFather.getElementsByTagName('li');
+            var oneHeight = aImg[0].offsetHeight;
+            var iNow = 0;
+            var iNow2 = 0;
+            var rollBox = document.getElementById('rollBoxOne');
+            var timer = null;
+            for(var i= 0; i<aImg.length; i++){
+                aBtn[i].index = i;
+                aBtn[i].onmouseover = function () {
+                    for(var i=0; i<aBtn.length; i++){
+                        aBtn[i].className = ''
+                    }
+                    this.className = 'active';
+                    starMove(oImgFather, {top : -this.index*oneHeight});
+                    iNow2 = iNow = this.index;
+
+                }
+
+            }
+            timer = setInterval(toRun,2000);
+
+            rollBox.onmouseover = function () {
+                clearInterval(timer);
+            };
+            rollBox.onmouseout = function () {
+                timer = setInterval(toRun,2000);
+            };
+            function toRun(){
+                if(iNow == 0){
+                    aImg[0].style.position = 'static';
+                    oImgFather.style.top = 0;
+                    iNow2 = 0;
+                }
+                if(iNow == aImg.length-1){
+                    iNow = 0;
+                    aImg[0].style.position = 'relative';
+                    aImg[0].style.top = aImg.length * oneHeight + 'px';
+                }else{
+                    iNow++;
+                }
+                iNow2++;
+                starMove(oImgFather, {top : -iNow2*oneHeight});
+
+                for(var i=0; i<aBtn.length; i++){
+                    aBtn[i].className = '';
+                }
+                aBtn[iNow].className = 'active';
             }
         }
     </script>
@@ -65,15 +152,31 @@
 <body>
 <nav id="nav" class="nav">
     <a href="javascript:void (0)" class="navEffect" id="navEffect">首页</a>
-    <a href="javascript:void (0)">个人简介</a>
+    <a href="routes/introduce.html">个人简介</a>
     <a href="routes/resume.html">简历</a>
-    <a href="javascript:void (0)">作品展示</a>
-    <a href="javascript:void (0)">马新浩介绍</a>
-    <a href="javascript:void (0)">马新浩媳妇</a>
-    <a href="javascript:void (0)">联系我</a>
+    <a href="routes/showcase.html">作品展示</a>
+    <a href="routes/friends.html">好友</a>
+    <a href="routes/skill.html">技能</a>
+    <a href="routes/call.html">联系我</a>
 </nav>
 <header>
-
+    <div class="rollBoxOne" id="rollBoxOne">
+        <ul id="imgFather">
+            <li><img src="images/1.jpg" alt="第一个推广链接"></li>
+            <li><img src="images/2.jpg" alt="第二个推广链接"></li>
+            <li><img src="images/3.jpg" alt="第三个推广链接"></li>
+            <li><img src="images/4.jpg" alt="第四个推广链接"></li>
+            <li><img src="images/5.jpg" alt="第五个推广链接"></li>
+        </ul>
+        <ol id="btn">
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
 </header>
+<
 </body>
 </html>
