@@ -119,18 +119,18 @@
                 }
 
             }
-            timer = setInterval(toRun,2000);
+            timer = setInterval(toRun,5000);
 
             rollBox.onmouseover = function () {
                 clearInterval(timer);
             };
             rollBox.onmouseout = function () {
-                timer = setInterval(toRun,2000);
+                timer = setInterval(toRun,5000);
             };
             function toRun(){
                 if(iNow == 0){
                     aImg[0].style.position = 'static';
-                    oImgFather.style.top = 0;
+                    oImgFather.style.top = 0 + 'px';
                     iNow2 = 0;
                 }
                 if(iNow == aImg.length-1){
@@ -180,6 +180,6 @@
         </ol>
     </div>
 </header>
-<
+
 </body>
 </html>
