@@ -73,6 +73,8 @@
             border: 1px solid black;
             background: #ccc;
             position: relative;
+            opacity: 0.5;
+            filter: alpha(opacity:50);
         }
         #frameTwoUl {
             position: relative;
@@ -150,7 +152,77 @@
         .iconFontName i:hover{
             color: #1133aa;
         }
-
+        /*****************************/
+        .frameProductShow {
+            width: 100%;
+            height: auto;
+            background: white;
+            overflow: hidden;
+        }
+        .frameWidth {
+            width: 90%;
+            margin: 0 auto;
+        }
+        .productList {
+            display: inline-block;
+            width: 30%;
+            height: 200px;
+            background: #ffccff;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            margin: 10px;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+        }
+        .productList p {
+            font-family: "微软雅黑", Verdana, Arial, sans-serif;
+            padding: 20px;
+            color: #444444;
+        }
+        .productIntroduction {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            font-weight: 900;
+            height: 50px;
+            top: -50px;
+            opacity: 0;
+            -moz-opacity: 0;
+            filter: alpha(opacity:0);
+            transition: top 0.5s, opacity 0.5s;
+            -webkit-transition: top 0.5s, opacity 0.5s;
+            -o-transition: top 0.5s, opacity 0.5s;
+        }
+        .productIntroductionBack {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 49px;
+            background: white;
+            opacity: 0.7;
+            -moz-opacity: 0.7;
+            filter: alpha(opacity:70);
+            border-bottom: 1px solid #888888;
+        }
+        .productIntroductionText {
+            position: absolute;
+            font-family: "微软雅黑", Verdana, Arial, sans-serif;
+            top: 0;
+            font-size: 22px;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            color: black;
+        }
+        .productList span{
+            color: #222222;
+            font-weight: 900;
+            font-size: 18px;
+        }
     </style>
     <script type="text/javascript">
         window.onload = function () {
@@ -234,10 +306,10 @@
                 aFrameTwoLi[i].style.position = 'absolute';
                 aFrameTwoLi[i].onmouseover = function () {
                     this.style.zIndex = zMinIndex++;
-                    starMove(this,{'marginLeft':-50,'marginTop':-50,'width':200,'height':200})
+                    starMove(this,{'marginLeft':-50,'marginTop':-50,'width':200,'height':200,'opacity':100})
                 };
                 aFrameTwoLi[i].onmouseout = function () {
-                    starMove(this,{'marginLeft':0,'marginTop':0,'width':100,'height':100})
+                    starMove(this,{'marginLeft':0,'marginTop':0,'width':100,'height':100,'opacity':50})
                 }
             }
             var oFrameTwoUl2 = document.getElementById('frameTwoUl2');
@@ -251,13 +323,23 @@
                 aFrameTwoLi2[i].style.position = 'absolute';
                 aFrameTwoLi2[i].onmouseover = function () {
                     this.style.zIndex = zMinIndex++;
-                    starMove(this,{'marginLeft':-50,'marginTop':-50,'width':200,'height':200})
+                    starMove(this,{'marginLeft':-50,'marginTop':-50,'width':200,'height':200,'opacity':100})
                 };
                 aFrameTwoLi2[i].onmouseout = function () {
-                    starMove(this,{'marginLeft':0,'marginTop':0,'width':100,'height':100})
+                    starMove(this,{'marginLeft':0,'marginTop':0,'width':100,'height':100,'opacity':50})
                 }
             }
-
+            var oProductList = document.getElementsByClassName('productList');
+            var oProductIntroduction = document.getElementsByClassName('productIntroduction');
+            for(var i=0; i<oProductList.length; i++){
+                oProductList[i].index = i;
+                oProductList[i].onmouseover = function () {
+                    oProductIntroduction[this.index].style.cssText = "top:0px; opacity:1; filter:'(alpha(opacity' + 100+ '))'";
+                };
+                oProductList[i].onmouseout = function () {
+                    oProductIntroduction[this.index].style.cssText = "top:-50px; opacity:0; filter:'(alpha(opacity' + 0 + '))'";
+                }
+            }
         }
     </script>
 
@@ -342,6 +424,113 @@
             <p>事业</p>
         </div>
     </section>
+</div>
+<div class="frameFive">
+    <div class="frameProductShow">
+        <div class="frameWidth">
+            <div class="productList">
+                <div class="productIntroduction">
+                    <div class="productIntroductionBack"></div>
+                    <div class="productIntroductionText">个人信息简介</div>
+                </div>
+                <p>
+                    <span>姓名</span>：张泽轩</br>
+                    <span>年龄</span>：93年出生</br>
+                    <span>性别</span>：男</br>
+                    <span>QQ </span>：327896777</br>
+                    <span>手机</span>：159****2951</br>
+                    <span>博客</span>：xuange306@github.io</br>
+                    <span>Email</span>：xuange@foxmail.com
+                </p>
+            </div>
+        </div>
+
+        <div class="frameWidth">
+            <div class="productList">
+                <div class="productIntroduction">
+                    <div class="productIntroductionBack"></div>
+                    <div class="productIntroductionText">已学习内容</div>
+                </div>
+                <p>
+                    <span>主修</span>：css3、html5、JavaScript<br/>
+                    <span>框架</span>：bootstrap、jQuery、node.js、moogodb、angularJs<br/>
+                    <span>工具</span>：webstorm、sublime、EditPlus、HBuilding<br/>
+                    <span>技能</span>：PS、CorelDRAW、AI、Git shell、
+                </p>
+            </div>
+        </div>
+
+        <div class="frameWidth">
+            <div class="productList">
+                <div class="productIntroduction">
+                    <div class="productIntroductionBack"></div>
+                    <div class="productIntroductionText">兴趣爱好</div>
+                </div>
+                <p>
+                    <span>体育</span>：篮球、乒乓球、跑步<br>
+                    <span>技术</span>：摄影、种地<br>
+                    <span>电脑</span>：电子竞技、听音乐、看电影<br>
+                    <span>工作</span>：交际、乐于助人、爱加班
+                </p>
+            </div>
+        </div>
+
+        <div class="frameWidth">
+            <div class="productList">
+                <div class="productIntroduction">
+                    <div class="productIntroductionBack"></div>
+                    <div class="productIntroductionText">待定</div>
+                </div>
+                <p>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                </p>
+            </div>
+        </div>
+
+        <div class="frameWidth">
+            <div class="productList">
+                <div class="productIntroduction">
+                    <div class="productIntroductionBack"></div>
+                    <div class="productIntroductionText">待定</div>
+                </div>
+                <p>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                </p>
+            </div>
+        </div>
+
+        <div class="frameWidth">
+            <div class="productList">
+                <div class="productIntroduction">
+                    <div class="productIntroductionBack"></div>
+                    <div class="productIntroductionText">待定</div>
+                </div>
+                <p>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                    <span>待定</span>：待定内容<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="frameSix">
+    <footer>
+        
+    </footer>
 </div>
 <div id="goTop">
 顶
