@@ -6,6 +6,27 @@
     <title></title>
     <link rel="stylesheet" href="styles/css.css">
     <style>
+
+        @font-face {font-family: "iconfont";
+            src: url('font/iconfont.eot'); /* IE9*/
+            src: url('font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('font/iconfont.woff') format('woff'), /* chrome、firefox */
+                url('font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+                url('font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:10rem;
+            margin: 0;
+            padding: 0;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .icon-dollar:before { content: "\e702"; }
+        .icon-remind:before { content: "\e6bc"; }
+        .icon-clock:before { content: "\e6bb"; }
         header{
             padding-top: 70px;
             background-color: #ccc;
@@ -39,6 +60,96 @@
             cursor: pointer;
         }
         .rollBoxOne .active{background: red;}
+
+        #frameTwo{position: relative;width: 100%;}
+        #frameTwoUl li,#frameTwoUl2 li {
+            overflow: hidden;
+            z-index: 1;
+            margin: 2px;
+            list-style-type: none;
+            height: 100px;
+            width: 100px;
+            float: left;
+            border: 1px solid black;
+            background: #ccc;
+            position: relative;
+        }
+        #frameTwoUl {
+            position: relative;
+            margin-left: 50px;
+            width: 318px;
+        }
+        #frameTwoUl img {max-width: 100%;}
+        #frameTwoUl2{
+            position: absolute;
+            width: 318px;
+            right: 50px;
+        }
+        #frameTwoUl2 img{max-width: 100%;}
+        .frameThree{width: 100%;height: auto;position: relative;text-align: center;}
+        .tree{
+            width: 200px;
+            height: 316px;
+            background: white;
+            border: 1px solid green;
+            margin: 0 auto;
+        }
+        .treeOne{
+            position: relative;
+            width: 100%;
+            background-color: #00ccff;
+            height: 50px;
+            margin-top: 150px;
+            top:0;
+            line-height: 50px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #888888;
+        }
+        .treeOneLeft{width: 0;height: 0;position: absolute;left: -100px;border-style: solid;border-color: transparent transparent transparent #00ccff;border-width: 25px 50px;}
+        .treeOneRight{width: 0;height: 0;position: absolute;left: 200px;border-style: solid;border-color: transparent #00ccff transparent transparent ;border-width: 25px 50px;}
+        .frameThree{padding: 20px 0;}
+        .frameFour{
+            width: 100%;
+            background: #00ccff;
+            text-align: center;
+        }
+        .iconFontBox{
+            text-align: center;
+            display: inline-block;
+        }
+        .iconFontName{
+            margin: 120px 100px;
+            float: left;
+        }
+        .iconFontName i{
+            display: block;
+            color: #999999;
+            margin: 20px;
+            transition: color 0.3s;
+            -webkit-transition: color 0.3s;
+            -moz-transition: color 0.3s;
+            -o-transition: color 0.3s;
+        }
+        .iconFontName p{
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 2rem;
+            cursor: default;
+            transition: -webkit-transform 1s;
+            -webkit-transition: -webkit-transform 1s;
+            -moz-transition: -webkit-transform 1s;
+            -o-transition: -webkit-transform 1s;
+        }
+        .iconFontName p:hover{
+            -moz-transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+        .iconFontName i:hover{
+            color: #1133aa;
+        }
 
     </style>
     <script type="text/javascript">
@@ -111,8 +222,41 @@
                 aBtn[iNow].className = 'active';
             }
 
-            /*回到顶部*/
-
+            var oFrameTwoUl = document.getElementById('frameTwoUl');
+            var aFrameTwoLi = oFrameTwoUl.getElementsByTagName('li');
+            var zMinIndex=2;
+            for (var i=0; i<aFrameTwoLi.length; i++){
+                //aFrameTwoLi[i].innerHTML = 'top:'+aFrameTwoLi[i].offsetTop+';left'+aFrameTwoLi[i].offsetLeft;
+                aFrameTwoLi[i].style.left = aFrameTwoLi[i].offsetLeft+'px';
+                aFrameTwoLi[i].style.top = aFrameTwoLi[i].offsetTop+'px';
+            }
+            for (var i=0; i<aFrameTwoLi.length;i++) {
+                aFrameTwoLi[i].style.position = 'absolute';
+                aFrameTwoLi[i].onmouseover = function () {
+                    this.style.zIndex = zMinIndex++;
+                    starMove(this,{'marginLeft':-50,'marginTop':-50,'width':200,'height':200})
+                };
+                aFrameTwoLi[i].onmouseout = function () {
+                    starMove(this,{'marginLeft':0,'marginTop':0,'width':100,'height':100})
+                }
+            }
+            var oFrameTwoUl2 = document.getElementById('frameTwoUl2');
+            var aFrameTwoLi2 = oFrameTwoUl2.getElementsByTagName('li');
+            for (var i=0; i<aFrameTwoLi2.length; i++){
+                //aFrameTwoLi[i].innerHTML = 'top:'+aFrameTwoLi[i].offsetTop+';left'+aFrameTwoLi[i].offsetLeft;
+                aFrameTwoLi2[i].style.left = aFrameTwoLi2[i].offsetLeft+'px';
+                aFrameTwoLi2[i].style.top = aFrameTwoLi2[i].offsetTop+'px';
+            }
+            for (var i=0; i<aFrameTwoLi2.length;i++) {
+                aFrameTwoLi2[i].style.position = 'absolute';
+                aFrameTwoLi2[i].onmouseover = function () {
+                    this.style.zIndex = zMinIndex++;
+                    starMove(this,{'marginLeft':-50,'marginTop':-50,'width':200,'height':200})
+                };
+                aFrameTwoLi2[i].onmouseout = function () {
+                    starMove(this,{'marginLeft':0,'marginTop':0,'width':100,'height':100})
+                }
+            }
 
         }
     </script>
@@ -147,8 +291,56 @@
     </div>
 </header>
 <div>
-    <section>
-
+    <section id="frameTwo">
+        <ul id="frameTwoUl">
+            <li><img src="images/myself/1.jpg"></li>
+            <li><img src="images/myself/2.jpg"></li>
+            <li><img src="images/myself/3.jpg"></li>
+            <li><img src="images/myself/4.jpg"></li>
+            <li><img src="images/myself/5.jpg"></li>
+            <li><img src="images/myself/6.jpg"></li>
+            <li><img src="images/myself/7.jpg"></li>
+            <li><img src="images/myself/8.jpg"></li>
+            <li><img src="images/myself/9.jpg"></li>
+        </ul>
+        <ul id="frameTwoUl2">
+            <li><img src="images/myself/10.jpg"></li>
+            <li><img src="images/myself/11.jpg"></li>
+            <li><img src="images/myself/12.jpg"></li>
+            <li><img src="images/myself/13.jpg"></li>
+            <li><img src="images/myself/14.jpg"></li>
+            <li><img src="images/myself/15.jpg"></li>
+            <li><img src="images/myself/16.jpg"></li>
+            <li><img src="images/myself/17.jpg"></li>
+            <li><img src="images/myself/18.jpg"></li>
+        </ul>
+    </section>
+</div>
+<div>
+    <section class="frameThree">
+        <div class="tree">
+            <div class="treeOne">
+                <div class="treeOneLeft"></div>
+                <div class="treeOneRight"></div>
+                形象展示
+            </div>
+        </div>
+    </section>
+</div>
+<div class="frameFour">
+    <section class="iconFontBox">
+        <div class="iconFontName">
+            <i class="iconfont icon-clock"></i>
+            <p>时间</p>
+        </div>
+        <div class="iconFontName">
+            <i class="iconfont icon-remind"></i>
+            <p>倾听</p>
+        </div>
+        <div class="iconFontName">
+            <i class="iconfont icon-dollar"></i>
+            <p>事业</p>
+        </div>
     </section>
 </div>
 <div id="goTop">

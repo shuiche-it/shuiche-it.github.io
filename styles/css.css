@@ -52,6 +52,7 @@ a:active {color: white}
     transition: bottom 0.5s, opacity 0.5s;
     -webkit-transition: bottom 0.5s, opacity 0.5s;
     -moz-transition: bottom 0.5s, opacity 0.5s;
+    z-index: 1000000;
 }
 #goTop:hover{
     opacity: 1;
