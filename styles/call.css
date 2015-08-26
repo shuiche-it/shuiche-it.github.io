@@ -1,0 +1,239 @@
+nav a:link
+{
+    color: white;
+}
+nav a:visited
+{
+    color: white;
+}
+nav a:hover
+{
+    color: white;
+}
+nav a:active
+{
+    color: white;
+}
+.nav
+{
+    z-index: 1000;
+    position: fixed;
+
+    width: 100%;
+    height: 70px;
+
+    text-align: right;
+
+    color: white;
+    background: #000;
+}
+.nav a
+{
+    font-family: Arial, '微软雅黑','宋体';
+    font-size: 22px;
+    font-weight: 900;
+    line-height: 70px;
+
+    position: relative;
+    top: 0;
+
+    display: inline-block;
+
+    height: 80px;
+    margin-right: 30px;
+
+    -webkit-transition: top .5s, color .5s;
+       -moz-transition: top .5s, color .5s;
+            transition: top .5s, color .5s;
+    text-decoration: none;
+
+    color: #fff;
+}
+#nav .navEffect
+{
+    top: -10px;
+
+    color: #fdcccc;
+}
+#navEffect
+{
+    top: -10px;
+
+    color: #fdcccc;
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    margin-right: 2rem;
+    font-size: 40px;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconfont_footer{
+    font-family: "iconfont" !important;
+    font-style: normal;
+    margin-right: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+li {
+    list-style-type: none;
+}
+
+.icon-boke:before {
+    content: "\e605";
+}
+
+.icon-qq:before {
+    content: "\e609";
+}
+
+.icon-weixin:before {
+    content: "\e603";
+}
+
+.icon-clock:before {
+    content: "\e600";
+}
+
+.icon-remind:before {
+    content: "\e601";
+}
+
+.icon-qq1:before {
+    content: "\e604";
+}
+
+.icon-dianhua:before {
+    content: "\e606";
+}
+
+.icon-gongkaiboke:before {
+    content: "\e607";
+}
+
+.icon-email:before {
+    content: "\e608";
+}
+
+header {
+    position: relative;
+    padding-top: 70px;
+    width: 100%;
+    height: 700px;
+    color: white;
+    background: url('../images/bg_call.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.page_welcome {
+    width: 400px;
+    height: 350px;
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    background: green;
+    color: white;
+    font-weight: 900;
+}
+
+.my_page_triangle {
+    position: absolute;
+    bottom: 50px;
+    right: 200px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px;
+    border-color: transparent green transparent transparent;
+}
+
+.my_page_title {
+    font-size: 80px;
+}
+
+.my_page_nr {
+    font-size: 30px;
+}
+
+.my_call {
+    background: green;
+    color: white;
+    padding-bottom: 30px;
+}
+
+.my_list {
+    font-size: 30px;
+}
+
+.my_list02 {
+    font-size: 22px;
+}
+
+.my_input input {
+    width: 100%;
+    height: 70px;
+    background: white;
+    color: green;
+}
+
+.my_input_ly textarea {
+    width: 100%;
+    height: 210px;
+    background: white;
+    color: green;
+}
+
+.btn {
+    width: 30%;
+    height: 70px;
+    background: #00ccff;
+    line-height: 65px;
+    text-align: center;
+    font-size: 22px;
+}
+
+body, html {
+    height: 100%;
+    overflow: visible;
+    /*hidden;*/
+}
+
+.floats {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.alert {
+    position: fixed;
+    z-index: 10001;
+    width: 400px;
+    height: 200px;
+    background: #fff;
+    text-align: center;
+    line-height: 165px;
+    border: 2px solid yellow;
+    top: 50%;
+    left: 50%;
+    margin-top: -102px;
+    margin-left: -202px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+footer {
+    background: black;
+    padding: 20px 0;
+    line-height: 2rem;
+}
