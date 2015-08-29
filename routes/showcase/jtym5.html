@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <style>
+        * {margin:0; padding: 0;}
+        .body1 {background: url("../../images/showcase/jtym5/8_1.jpg") repeat-x;}
+        .form1 {width: 579px; height: 415px;margin: 100px auto; position: relative;}
+        .form1 input { font-size: 18px; border: 0;padding-left: 8px;color: #333333;background: transparent;}
+        .txt11 {  position: absolute; top: 164px;left: 191px;width: 265px;height: 39px;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;}
+        .txt21 {  position: absolute; top: 218px;left: 191px;width: 265px;height: 39px;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;}
+
+        .body2{background: #094c9b;width: auto;}
+        .img2 {width: 709px;}
+        .form2 { width: 709px;  margin: 0 auto;position: relative;}
+        .txt12 {left: 288px;top: 285px;width: 155px;border: 0;height: 20px;background: transparent;color: #c1deea;position: absolute;}
+        .txt22 {left: 288px;top: 325px;width: 155px;border: 0;height: 20px;background: transparent;color: #c1deea;position: absolute;}
+        .txt32 {left: 288px;top: 364px;width: 53px;border: 0;height: 20px;background: transparent;color: #c1deea;position: absolute;}
+        .txt42 {position:absolute; left: 351px;top: 364px;width: 56px;border: 0;height: 23px;color: #c1deea;}
+
+        .body3 {background:#1f5ea3;}
+        .form3 {  position: relative;width: 899px; margin: 0 auto;}
+        .img3 {width: 899px; margin: 0 auto;}
+        .txt13 {position: absolute;top:168px; left: 493px;width: 168px;height: 19px;background: transparent;/*border: 0;*/}
+        .txt23 {position: absolute;top:214px; left: 493px;width: 168px;height: 19px;background: transparent;/*border: 0;*/}
+    </style>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oTxt12 = document.getElementById('txt12');
+            oTxt12.onblur = function () {
+                if (oTxt1.value == '') {
+                    oTxt1.value = '输入用户名';
+                }
+            };
+            oTxt12.onfocus = function () {
+                if(oTxt1.value == '输入用户名') {
+                    oTxt1.value = ''
+                }
+            };
+            var oTxt1 =document.getElementById('txt13');
+            var oTxt2 =document.getElementById('txt23');
+            oTxt1.onblur = function () {
+                if(oTxt1.value == '') {
+                    oTxt1.value = '请输入用户名'
+                }
+            };
+            oTxt1.onfocus = function () {
+                if(oTxt1.value == '请输入用户名'){
+                    oTxt1.value = '';
+                }
+            };
+
+            oTxt2.onblur = function () {
+                if(oTxt2.value == '') {
+                    oTxt2.value = '请输入密码'
+                }
+            };
+            oTxt2.onfocus = function () {
+                if(oTxt2.value == '请输入密码'){
+                    oTxt2.value = '';
+                }
+            };
+        }
+    </script>
+</head>
+<body class="body1">
+<div class="body1">
+    <form id="form" class="form1">
+        <img src="../../images/showcase/jtym5/8_1_04.jpg" usemap="#img">
+        <map id="img11" name="img11">
+            <area shape="rect" coords="196,290,295,328" href="javascript:" alt="denglu">
+            <area shape="rect" coords="359,290,457,328" href="javascript:" alt="denglu">
+        </map>
+        <input type="text" name="name" class="txt11">
+        <input type="password" name="password" class="txt21">
+    </form>
+</div>
+<div class="body2">
+    <form class="form2">
+        <img class="img2" src="../../images/showcase/jtym5/8_2.jpg" usemap="#map">
+        <map id="map" name="map">
+            <area shape="rect" coords="413,364,461,387" href="##" alt="huan" onfocus="blur(this)">
+            <area shape="rect" coords="402,407,461,426" href="##" alt="huan" onfocus="blur(this)">
+        </map>
+        <input type="text" id="txt12" class="txt12" value="输入用户名">
+        <input type="password" id="txt22" class="txt22">
+        <input type="text" id="txt32" class="txt32">
+        <div id="txt42" class="txt42">
+            张泽轩
+        </div>
+    </form>
+</div>
+<div class="body3">
+    <form action="" class="form3">
+        <img src="../../images/showcase/jtym5/8_3.png" width="899" height="421" id="img13" class="img33" usemap="#img33">
+        <map id="img33" name="img33">
+            <area shape="rect" coords="" href="##">
+            <area shape="rect" coords="" href="##">
+        </map>
+        <input type="text" id="txt13" class="txt13" value="请输入用户名">
+        <input type="text" id="txt23" class="txt23" value="请输入密码">
+    </form>
+</div>
+</body>
+</html>

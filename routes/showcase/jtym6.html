@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+
+    <link href="../../styles/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>美人有约</title>
+    <style>
+        body{padding-top: 70px;}
+        @font-face {font-family: 'iconfont';
+            src: url('../../styles/showcase/font/iconfont.eot'); /* IE9*/
+            src: url('../../styles/showcase/font/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('../../styles/showcase/font/iconfont.woff') format('woff'), /* chrome、firefox */
+            url('../../styles/showcase/font/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url('../../styles/showcase/font/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        .iconfont {
+            font-family:"iconfont" !important;
+            color: #ffffff;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .iconfont2 {
+            font-family:"iconfont" !important;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 25px;
+            margin-right: 10px;
+            border: 1px solid;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            padding: 3px;
+        }
+        .iconfont3 {
+            font-family:"iconfont" !important;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+            float: right;
+            cursor: pointer;
+        }
+        .iconfont4 {
+            font-size: 24px;
+            font-family:"iconfont" !important;
+            font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .my_nav{background-color: green;font-size: 30px;}
+        .my_nav_color {padding-top: 10px;}
+        .my_nav_color li a:visited {color: #ffffff}
+        .my_nav_color li a:link {color: #ffffff}
+        .my_nav_color li a:hover {color: #ffffff}
+        .my_nav_color li a:active {color: #ffffff}
+        .my_nav_logo {font-size: 50px;}
+        .font1 {font-size: 40px;}
+        .my_1{background-color: #888888; height: 500px; overflow: hidden;}
+        .my_2 {width: 100%; height: 780px;text-align: center;overflow: hidden;background-image: url("../../images/showcase/jtym6/background.png")}
+        .my2_left{text-align: left;font-size: 60px;border-bottom: 8px solid #000000;line-height: 60px;padding:80px 0 0 20px; }
+        .my2_left2{text-align: right;padding:50px 50px 0 0;}
+        .my2_left2 h3 {cursor: pointer;font-weight: 600;}
+        .my2_floatLeft {float: left;color: green;font-size: 20px;border: 2px solid green; width: 95px;height: 95px;padding-top:30px; cursor: default; border-radius: 50px;-webkit-border-radius: 50px;-moz-border-radius: 50px;overflow: hidden}
+
+        /*特效*/
+        .my2_floatLeft{
+            transition: transform 1s;
+            -moz-transition: transform 1s;
+            -webkit-transition: transform 1s;
+            -o-transition: transgorm 1s;
+        }
+        .my2_floatLeft:hover{
+            transform:rotate(360deg);
+            -moz-transform:rotate(360deg); /* Firefox 4 */
+            -webkit-transform:rotate(360deg); /* Safari and Chrome */
+            -o-transform:rotate(360deg); /* Opera */
+        }
+
+        .my2_left2_box {margin-top:80px;}
+        .my2_left2_text {font-size: 14px; font-weight: 700}
+        .my2_2{margin-top: 70px; font-size: 18px;font-weight: 800; color: #888888;}
+        .my_3{width: 100%; height: 780px;text-align: center;overflow: hidden;background-color: #ffffff;}
+        .my3_box {width: 100%; padding: 0 40px; }
+        .my3_boxBack {background-color: #ccc; font-size: 18px;font-weight: 800; color: #888888; overflow: hidden;}
+        .my3_imgBox{width: 255px; height: 170px; overflow: hidden;}
+        .my3_imgBox img{  position: relative;  width: 255px;  height: 170px;  left: 0;  top: 0;
+            transition:width 1s, height 1s,left 1s, top 1s;
+            -moz-transition:width 1s, height 1s,left 1s, top 1s;
+            -webkit-transition:width 1s, height 1s,left 1s, top 1s;
+            -o-transition:width 1s, height 1s,left 1s, top 1s;
+        }
+        .my3_imgBox img:hover{width: 275px;  height: 183px;  left: -10px;  top: -6px; }
+        .my_4 {width: 100%; height: 780px;text-align: center;overflow: hidden;background-image: url("../../images/showcase/jtym6/background.png")}
+        .my4_leftBack {width: 700px; height: 650px; background: url("../../images/showcase/jtym6/19.png") no-repeat right bottom;}
+        .my4_leftTxt{margin-top: -100px; font-weight: 500;color: #888888; font-size: 14px;font-weight: 600;}
+        .my4_leftTxt2{margin-top: -135px; font-weight: 500;color: #888888;font-size: 14px;font-weight: 600;}
+        .my4_rightTxt {padding-top: 150px; font-weight: 500;color: #888888;font-size: 14px;font-weight: 600;}
+        .my_4 h3{color: green;font-weight: 600;}
+        .my_5{width: 100%; height: 780px;text-align: center;overflow: hidden;background-color: #ffffff;}
+        .my5_body{margin-top: 50px;}
+        .my5_bodyImg img{width: 150px; height: 150px; margin-right: 20px;}
+        .my5_bodyTxt {font-weight: 600; font-size: 14px;margin-top: 30px;color: #888888}
+        .my5_bodyTxt h3{font-weight: 600;color: green}
+        .my5_rightTxt {margin: 10px 20px;line-height:30px; font-size:14px; font-weight: 600; color: #888888 }
+        .my5_rightBox{
+            margin-top: 20px; text-align: left;padding:0 20px;  width: 100%;height: 50px; line-height: 50px;font-weight: 600;
+            font-size: 14px; color: #888888; border: 1px solid green; border-radius: 10px; -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;}
+        .my5_rightBox1{color: green; margin: 0;font-size: 18px;}
+        .my_6{width: 100%; height: 780px;text-align: center;overflow: hidden;background-color: #ebebeb;}
+        .my6_leftTxt p{font-weight: 600;color: #888888; font-size: 24px;}
+        .my6_right{margin-top: 400px;color: #888888; font-weight: 600;}
+        .my6_email{width: 100%; height: 50px; font-size: 20px;font-weight: 600; line-height: 50px;border:2px solid #888888;border-radius: 10px;-webkit-border-radius: 10px;-moz-border-radius: 10px;}
+        .my_7{width: 100%; height: 120px;text-align: center;overflow: hidden; color: #dfdfdf; background-color: #252525;}
+
+    </style>
+    <script type="text/javascript" src="styles/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="styles/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        function myAddEvent(obj, sevent, fn) {
+            if (obj.attachEvent) {
+                obj.attachEvent('on' + sevent, fn);
+            }
+            else {
+                obj.addEventListener(sevent, fn, false);
+            }
+        }
+        function getScrollTopOfBody() {
+            var scrollTop ;
+            if (typeof window.pageYOffset != 'undefined') {
+                scrollTop = window.pageYOffset ;
+            }
+            else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
+                scrollTop = document.documentElement.scrollTop ;
+            } else if (typeof document.body != 'undefined') {
+                scrollTop =document.body.scrollTop;
+            }
+            return scrollTop;
+        }
+
+        window.onload = function () {
+            var timer =null;
+            function onmousewhell(ev) {
+                var oEvent = ev || event;
+                var bDown = true;
+                //向上是false； 向下是true
+                bDown = oEvent.wheelDelta?oEvent.wheelDelta < 0:oEvent.detail > 0;//三目；
+            }
+            myAddEvent(document, 'mousewheel', onmousewhell);
+            myAddEvent(document, 'DOMMouseScroll', onmousewhell);
+
+            var oMyNavList = document.getElementById('my_navList');
+
+        }
+    </script>
+</head>
+<body>
+<div class="my_nav navbar navbar-default navbar-fixed-top ">
+    <div class="container ">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1 ">
+            <!--这个Ul影响的-->
+            <ul class="nav navbar-nav my_nav_logo">
+                <li><i class="iconfont">&#xe600;</i></li>
+                <li><i class="iconfont font1">&#xe601;</i></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right my_nav_color" id="my_navList">
+                <li><a href="#about">About</a></li>
+                <li><a href="#Special">Special</a></li>
+                <li><a href="#Server">Server</a></li>
+                <li><a href="#Join">Join</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="my_1">
+    <div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="../../images/showcase/jtym6/1v4.jpg" alt="">
+                    <div class="carousel-caption">
+                        <h3>专业的服务</h3>
+                        <p>一个你指定的专业美容艺术家</p>
+                        <p>上门为您完成美容服务</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="../../images/showcase/jtym6/2v4.jpg" alt="...">
+                </div>
+                <div class="item">
+                    <img src="../../images/showcase/jtym6/3v4.jpg" alt="...">
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<div id="about" class="my_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="my2_left">
+                    <p>ABOUT</p>
+                    <p>US.</p>
+                </div>
+                <div class="my2_left2">
+                    <h3>品牌故事 >></h3>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="my2_left2_box">
+                    <div class="my2_floatLeft">
+                        <strong>美丽随心</strong>
+                    </div>
+                    <div class="my2_left2_text">
+                        <p>首创“社区体验店+上门服务”模式</p>
+                        <p>服务时间，个性随心，由您掌控</p>
+                        <p>服务地点，灵活方便，由您指定</p>
+                    </div>
+                </div>
+
+                <div class="my2_left2_box">
+                    <div class="my2_floatLeft">
+                        <strong>绿色时尚</strong>
+                    </div>
+                    <div class="my2_left2_text">
+                        <p>产品天然萃取，畅享绿色消费体验</p>
+                        <p>美容师无业绩压力，不被推销困扰</p>
+                        <p>服务时接受监督，不再担心服务品质</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my2_left2_box">
+                    <div class="my2_floatLeft">
+                        <strong>线上预约</strong>
+                    </div>
+                    <div class="my2_left2_text">
+                        <p>一键预约,消费成本较低60%　　　</p>
+                        <p>活动优惠多多，消费体验提升100%</p>
+                        <p>首次消费，既有免单机会或惊喜大礼</p>
+                    </div>
+                </div>
+
+                <div class="my2_left2_box">
+                    <div class="my2_floatLeft">
+                        <strong>安全有效</strong>
+                    </div>
+                    <div class="my2_left2_text">
+                        <p>专注美业服务20年，宝洁产品品控标准</p>
+                        <p>全国116家西安30余家社区体验店</p>
+                        <p>人身财产双向保险，全力确保服务品质</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row my2_2" id="my2_2">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <!--onmouseover="rotateYDIV()"-->
+                        <img src="../../images/showcase/jtym6/2.png" alt=""/>
+                    </div>
+                    <div class="panel-footer">玻尿酸面膜</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="../../images/showcase/jtym6/4v4.jpg" alt=""/>
+                    </div>
+                    <div class="panel-footer">产品套装</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img src="../../images/showcase/jtym6/4.png" alt=""/>
+                    </div>
+                    <div class="panel-footer" >产品套装</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="Special" class="my_3">
+    <div class="container">
+        <div class="row my3_title">
+            <div class="col-md-4">
+                <div class="my2_left">
+                    <p>WE ARE</p>
+                    <p>SPECIAL.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="my3_box">
+                    <div class="panel panel-default my3_boxBack">
+                        <div class="panel-body">
+                            <div class="my3_imgBox">
+                                <img src="../../images/showcase/jtym6/10.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="panel-footer">安全</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my3_box">
+                    <div class="panel panel-default my3_boxBack">
+                        <div class="panel-body">
+                            <div class="my3_imgBox">
+                                <img src="../../images/showcase/jtym6/9.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="panel-footer">方便</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my3_box">
+                    <div class="panel panel-default my3_boxBack">
+                        <div class="panel-body">
+                            <div class="my3_imgBox">
+                                <img src="../../images/showcase/jtym6/5.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="panel-footer">专业</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my3_box">
+                    <div class="panel panel-default my3_boxBack">
+                        <div class="panel-body">
+                            <div class="my3_imgBox">
+                                <img src="../../images/showcase/jtym6/6.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="panel-footer">坚持</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my3_box">
+                    <div class="panel panel-default my3_boxBack">
+                        <div class="panel-body">
+                            <div class="my3_imgBox">
+                                <img src="../../images/showcase/jtym6/7.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="panel-footer">信任</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my3_box">
+                    <div class="panel panel-default my3_boxBack">
+                        <div class="panel-body">
+                            <div class="my3_imgBox">
+                                <img src="../../images/showcase/jtym6/8.png" alt=""/>
+                            </div>
+                        </div>
+                        <div class="panel-footer">个性</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="Server" class="my_4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="my4_leftBack">
+                    <div class="col-md-6">
+                        <div class="my2_left">
+                            <p>HOW IT</p>
+                            <p>WORKS.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-left my4_leftTxt">
+                    <p>Choose</p>
+                    <h3>浏览选择</h3>
+                    <p>浏览微信平台美人有约菜单</p>
+                    <p>然后选择你心仪的美容师</p>
+                </div>
+                <div class="text-right my4_leftTxt2">
+                    <p>Online Payfor</p>
+                    <h3>在线预约</h3>
+                    <p>确定你的预约时间</p>
+                    <p>位置，和在线支付</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-right my4_rightTxt">
+                    <p>Get Ready</p>
+                    <h3>上门服务</h3>
+                    <p>一个你指定的专业美容艺术家</p>
+                    <p>上门为您完成美容服务</p>
+                </div>
+                <br>
+                <br>
+                <img src="../../images/showcase/jtym6/20.png" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="Join" class="my_5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="my2_left">
+                    <p>JOIN</p>
+                    <p>US.</p>
+                </div>
+            </div>
+            <div class="col-md-4"> </div>
+            <div class="col-md-4"> </div>
+        </div>
+        <div class="row my5_body">
+            <div class="col-md-8">
+                <div class="my5_bodyImg">
+                    <img src="../../images/showcase/jtym6/15.png" alt=""/>
+                    <img src="../../images/showcase/jtym6/16.png" alt=""/>
+                    <img src="../../images/showcase/jtym6/17.png" alt=""/>
+                    <img src="../../images/showcase/jtym6/18.png" alt=""/>
+                </div>
+                <div class="text-left my5_bodyTxt">
+                    <h3>天使"集结号"</h3>
+                    <p>互联网社区美容第一品牌，打造美业创客平台</p>
+                    <p>你当老板，我出资；你做服务，我经营……</p>
+                    <p>让你彻底摆脱销售压力，做自己喜欢的事情</p>
+                    <br>
+                    <p>西安互联网社区美容的集结号已吹响……</p>
+                    <p>你，还在等什么？</p>
+                    <p>快来加入美容有约，</p>
+                    <p>培训、保险、奖励、补贴、专车、无责任高底薪、高分成</p>
+                    <p>6大专享待遇等你来！</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="my5_rightBox my5_rightBox1">
+                    <p><i class="iconfont2">&#xe67b;</i>美容师们看过来<i class="iconfont3">&#xe632;</i></p>
+                </div>
+                <p class="text-left my5_rightTxt">只要你够有才华，有双可以帮助女性重塑容颜的手，勇于做美容界的尝试者，能够紧跟互联网时代的潮流。美人有约约的就是你！</p>
+
+                <div class="my5_rightBox">
+                    <p><i class="iconfont2">&#xe62d;</i>西安市丈八路汇鑫IBC C座1304<i class="iconfont3">&#xe603;</i></p>
+                </div>
+                <div class="my5_rightBox">
+                    <p> <i class="iconfont2">&#xe640;</i>hr@meirenyouyue.com<i class="iconfont3">&#xe603;</i></p>
+                </div>
+                <div class="my5_rightBox">
+                    <p><i class="iconfont2">&#xe61b;</i>029-89281490<i class="iconfont3">&#xe603;</i></p>
+                </div>
+                <div class="my5_rightBox">
+                    <p><i class="iconfont2">&#xe61b;</i>客服4008813550<i class="iconfont3">&#xe603;</i></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="Contact" class="my_6">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="my2_left">
+                    <p>CONTACT</p>
+                    <p>US.</p>
+                </div><br><br>
+                <img src="../../images/showcase/jtym6/3.png" alt=""/>
+                <br><br>
+                <div class="my6_leftTxt">
+                    <p>马上关注，送198元现金</p>
+                    <p>1元轻松开始美丽约定</p>
+                </div>
+            </div>
+            <div class="col-md-4">&nbsp;</div>
+            <div class="col-md-4">
+                <div class="text-left my6_right">
+                    <p>微信公众号：meirenyouyue360</p>
+                    <p>请把您对我们的意见发送至我们的</p>
+                    <p>邮箱</p>
+                    <br>
+                    <div class="my6_email">
+                        <p>&nbsp;&nbsp;<i class="iconfont4">&#xe640;</i>EMAIL&nbsp;&nbsp;&nbsp;ceo@meirenyouyue.com </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="my_7">
+    <h2>MER REN YOU YUE</h2>
+    <small>西安美人有约网络科技有限公司/陕ICP备15005321号</small>
+</div>
+</body>
+</html>

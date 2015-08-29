@@ -69,6 +69,7 @@ nav a:active {
     right: 50px;
     bottom: -50px;
     opacity: 0.5;
+    border-radius: 10%;
     filter: alpha(opacity:50);
     transition: bottom 0.5s, opacity 0.5s;
     -webkit-transition: bottom 0.5s, opacity 0.5s;
@@ -216,6 +217,15 @@ header {
     -o-animation: upDown 5s linear infinite alternate;
 }
 
+.myselfGRXX {
+    position: absolute;
+    height: 316px;
+    top: 50%;
+    left: 50%;
+    font-size: 3rem;
+    margin: -6rem -1.5rem;
+}
+
 .treeOneLeft {
     width: 0;
     height: 0;
@@ -271,7 +281,7 @@ header {
 .iconFontName p {
     color: #ffffff;
     font-weight: 800;
-    font-size: 2rem;
+    font-size: 3rem;
     cursor: default;
     transition: -webkit-transform 1s;
     -webkit-transition: -webkit-transform 1s;
@@ -291,9 +301,10 @@ header {
 }
 
 /*****************************/
-.frameFive{
+.frameFive {
     background-color: #eee;
 }
+
 .frameProductShow {
     width: 100%;
     height: auto;

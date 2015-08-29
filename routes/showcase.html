@@ -5,37 +5,39 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        * {
+        body {
+            background-image: url("../images/showcase/bg_index.png");
             padding: 0;
             margin: 0;
         }
 
-        a:link {
+        .my_nav a:link {
             color: white
         }
 
-        a:visited {
+        .my_nav a:visited {
             color: white
         }
 
-        a:hover {
+        .my_nav a:hover {
             color: white
         }
 
-        a:active {
+        .nav a:active {
             color: white
         }
 
-        .nav {
+        .my_nav {
             width: 100%;
             height: 70px;
             background: #000000;
             color: white;
             position: fixed;
             text-align: right;
+            z-index: 10000;
         }
 
-        .nav a {
+        .my_nav a {
             font-family: Arial, "微软雅黑", "宋体";
             top: 0;
             transition: top 0.5s, color 0.5s;
@@ -52,7 +54,7 @@
             color: #FFFFFF;
         }
 
-        #nav .navEffect {
+        #my_nav .navEffect {
             top: -10px;
             color: #fdcccc;
         }
@@ -61,17 +63,17 @@
             top: -10px;
             color: #fdcccc;
         }
-
-        header {
-            padding-top: 70px;
-            width: 100%;
-            height: 400px;
-            background: red;
+        .list-group .my_list_group_item{
+            border:none;
         }
+
     </style>
+    <link rel="stylesheet" href="../styles/bootstrap.min.css"/>
+    <script type="text/javascript" src="../styles/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../styles/bootstrap.min.js"></script>
     <script type="text/javascript">
         window.onload = function () {
-            var nav = document.getElementById('nav');
+            var nav = document.getElementById('my_nav');
             var aNav = nav.getElementsByTagName('a');
             for (var i = 0; i < aNav.length; i++) {
                 aNav[i].onmousemove = function () {
@@ -91,7 +93,7 @@
 
 </head>
 <body>
-<nav id="nav" class="nav">
+<nav id="my_nav" class="my_nav">
     <a href="../index.html">首页</a>
     <a href="introduce.html">个人简介</a>
     <a href="resume.html">简历</a>
@@ -100,8 +102,315 @@
     <a href="skill.html">技能</a>
     <a href="call.html">联系我</a>
 </nav>
-<header>
+<div style="width: 100%;height: 80px"></div>
 
-</header>
+<div class="container">
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#a1" aria-controls="home" role="tab" data-toggle="tab">静态页面</a></li>
+            <li role="presentation"><a href="#a2" aria-controls="profile" role="tab" data-toggle="tab">css展示</a></li>
+            <li role="presentation"><a href="#a3" aria-controls="messages" role="tab" data-toggle="tab">JavaScript效果</a></li>
+            <li role="presentation"><a href="#a4" aria-controls="messages" role="tab" data-toggle="tab">nodeJS展示</a></li>
+            <li role="presentation"><a href="#a5" aria-controls="messages" role="tab" data-toggle="tab">数据库展示</a></li>
+            <li role="presentation"><a href="#a5" aria-controls="messages" role="tab" data-toggle="tab">PS作品</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="a1">
+                <div class="list-group">
+                    <a href="showcase/jtym1.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">毕业设计首页</h4>
+                        <p class="list-group-item-text">毕设老师要求我做一个学校科技处的官网作为我的毕业设计成果，我就按西安工程大学科技处的官网做了一个。</p>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym2.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">家里</h4>
+                        <p class="list-group-item-text">家里是仿照出格网站风格做的一个家族展示页面后期图片没有更正，主要是体现自己亲戚们每个家庭的房屋结构，人员组成等功能</p>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym3.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">西安百川生物科技有限公司</h4>
+                        <p class="list-group-item-text">西安百川生物科技有限公司是我一个初中同学申请注册的公司，我就仿照他公司的官网做了一个效果。</p>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym4.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">钛媒体</h4>
+                        <p class="list-group-item-text">网上浏览是看到了钛媒体，这是一个属于新闻解读类型的网站</p>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym5.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">登录界面</h4>
+                        <p class="list-group-item-text">写了三个后台登录界面，为了给个人毕业设计后台用</p>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym6.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">西安美人有约网络科技有限公司--第一版</h4>
+                        <p class="list-group-item-text">公司前端负责人让我试着去做一版公司pc端官网，给了UI图，我就写成这样了</p>
+                        <p class="list-group-item-text">专门做上门美容的一家互联网公司，2015年的暑假我就在这家公司实习。</p>
+                    </a>
+                    <a href="http://www.meirenyouyue.com">原网址：www.meirenyouyue.com</a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym7.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">分享有礼页面</h4>
+                        <p class="list-group-item-text">手机端网页，查看请切换到手机模式下</p>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym8/jtym8.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">西安美人有约网络科技有限公司--第二版</h4>
+                        <p class="list-group-item-text">公司前端负责人让我试着把之前写的加点特效，我就改成这样了</p>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym9.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">手机端网页--查看请切换到手机模式</h4>
+                        <p class="list-group-item-text">公司实习的时为一个活动做得承诺书</p>
+                    </a>
+                </div>
+                <div class="list-group">
+                    <a href="showcase/jtym10/index.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">一个BMI统计网站</h4>
+                        <p class="list-group-item-text">我的大学老师在自己的论文里需要一个网页的支持，让我帮忙做一个。在这里我用的了bootstrap框架，jQuery，以及jQueryPlot。</p>
+                    </a>
+                </div>
+            </div>
+            <!-- 盒子2 -->
+            <div role="tabpanel" class="tab-pane" id="a2">
+                <div class="list-group">
+                    <a href="showcase/jtym1.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                    </a>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="a3">
+                <div class="list-group">
+                    <div class="list-group">
+                        <a href="javascript:void (0)" class="list-group-item my_list_group_item">
+                            <h4 class="list-group-item-heading">List group item heading</h4>
+                            <p class="list-group-item-text">百川文化=====</p>
+
+                        </a>
+                    </div>
+                    <div class="col-md-4 panel panel-default">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                    </div>
+                    <div class="col-md-2 panel panel-default">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                    </div>
+                    <div class="col-md-2 panel panel-default">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                    </div>
+                    <div class="col-md-4 panel panel-default">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                    </div>
+                    <div class="col-md-4 panel panel-default">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                    </div>
+                    <div class="col-md-4 panel panel-default">
+                        <div class="panel-body">
+                            Basic panel example
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="a4">
+                <div class="list-group">
+                    <a href="showcase/jtym1.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                    </a>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="a5">
+                <div class="list-group">
+                    <a href="showcase/jtym1.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                    </a>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="a6">
+                <div class="list-group">
+                    <a href="showcase/jtym1.html" class="list-group-item my_list_group_item">
+                        <h4 class="list-group-item-heading">List group item heading</h4>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                        <p class="list-group-item-text">百川文化=====</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

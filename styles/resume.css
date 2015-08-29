@@ -83,13 +83,13 @@ a:active
 
     box-sizing: border-box;
     width: 720px;
-    height: 921pt;
+    height: 821pt;
     margin: 5pt auto;
     padding: 58.8pt;
 
     border: 1px solid #646464;
-    background: url(../images/bl.png) no-repeat 39.2pt 833pt,
-    url(../images/br.png) no-repeat 500pt 833pt,
+    background: url(../images/bl.png) no-repeat 39.2pt 733pt,
+    url(../images/br.png) no-repeat 500pt 733pt,
     url(../images/tl.png) no-repeat 39.2pt 39.2pt,
     url(../images/tr.png) no-repeat 500pt 39.2pt;
     background-color: white;

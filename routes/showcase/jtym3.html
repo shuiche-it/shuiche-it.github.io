@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../styles/showcase/jtym3.css"/>
+    <script type="text/javascript">
+        function onBlur () {
+            var oInt = document.getElementById('int1');
+            var oIntV = oInt.value;
+            if(oIntV==''){
+                oInt.value ='请输入搜索内容';
+            }
+        }
+        function onFocus () {
+            var oInt = document.getElementById('int1');
+            var oIntV = oInt.value;
+            if(oIntV==oInt.defaultValue){
+                oInt.value = '';
+            }
+        }
+        window.onload = function () {
+            var oNav = document.getElementById('nav_ul');
+            var aNavA = oNav.getElementsByTagName('a');
+            var i=0;
+            for (i=0; i<aNavA.length; i++) {
+                aNavA[i].index = i;
+                aNavA[i].onclick = function () {
+                    for(i=0; i<aNavA.length; i++){
+                        aNavA[i].style.backgroundColor='';
+                    }
+                    aNavA[this.index].style.backgroundColor = 'red';
+                }
+            }
+
+            var oImg =document.getElementById('Img_xunhuan_body');
+            var aImg =oImg.getElementsByTagName('img');
+            var timer = null;
+            var iSpeed = -3;
+            oImg.innerHTML += oImg.innerHTML;
+            oImg.style.width = aImg[0].offsetWidth * aImg.length +'px';
+            function starMove ()  {
+                if (oImg.offsetLeft < -(oImg.offsetWidth/2)){
+                    oImg.style.left =0;
+                }
+                oImg.style.left = oImg.offsetLeft + iSpeed + 'px';
+            }
+            timer= setInterval(starMove,30);
+            oImg.onmouseover = function () {
+                clearInterval(timer);
+            };
+            oImg.onmouseout = function (){
+                timer = setInterval(starMove,30)
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="title" class="title">
+    <img src="../../images/showcase/jtym3/logo.png">
+    <div id="search" class="search">
+        <img src="../../images/showcase/jtym3/bg662.gif"><a href="javascript:" style="font-size: 12px;">&nbsp;&nbsp;中文</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="../../images/showcase/jtym3/bg662.gif"><a href="javascript:" style="font-size: 12px;">&nbsp;&nbsp;English</a><br>
+        <input id="int1" type="text" onblur="onBlur()" onfocus="onFocus()"  value="请输入搜索内容">
+        <a href="javascript:"><img src="../../images/showcase/jtym3/img270.gif"></a>
+        <span class="search_span"><a href="javascript:">设为首页</a><span> /</span>
+        <a href="javascript:">加入收藏</a></span>
+    </div>
+</div>
+<div id="nav" class="nav">
+    <ul id="nav_ul" class="nav_ul">
+        <li><a href="##" style="background-color: red">首　　页</a></li>
+        <li><a href="##">关于百川</a></li>
+        <li><a href="##">新闻资讯</a></li>
+        <li><a href="##">产品中心</a></li>
+        <li><a href="##">招商合作</a></li>
+        <li><a href="##">人才招聘</a></li>
+        <li><a href="##">在线留言</a></li>
+        <li><a href="##">联系我们</a></li>
+    </ul>
+</div>
+<div id="banner">
+    <div id="banner_bg"></div><!--标题背景-->
+    <div id="banner_info">此处是第三个图片</div><!--标题-->
+    <ul>
+        <li class="on">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="banner_list" class="banner_list">
+        <a href="##"><img src="../../images/showcase/jtym3/back.png" title="橡树小屋的blog" alt="橡树小屋的blog"/></a>
+        <a href="##"><img src="../../images/showcase/jtym3/back2.png" title="橡树小屋的blog" alt="橡树小屋的blog"/></a>
+        <a href="##"><img src="../../images/showcase/jtym3/back3.png" title="橡树小屋的blog" alt="橡树小屋的blog"/></a>
+    </div>
+</div>
+<div id="Img-xunhuan" class="Img-xunhuan">
+    <div id="Img_xunhuan_top" class="Img_xunhuan_top">
+        <img src="../../images/showcase/jtym3/img338.gif" >
+        <span>产品展示</span>
+        <a href="##"><img src="../../images/showcase/jtym3/img445.gif" style="float: right"></a>
+    </div>
+    <div id="Img_xunhuan_body" class="Img_xunhuan_body">
+        <img src="../../images/showcase/jtym3/1.jpg">
+        <img src="../../images/showcase/jtym3/3.jpg">
+        <img src="../../images/showcase/jtym3/4.jpg">
+        <img src="../../images/showcase/jtym3/5.jpg">
+        <img src="../../images/showcase/jtym3/6.jpg">
+        <img src="../../images/showcase/jtym3/7.jpg">
+        <img src="../../images/showcase/jtym3/8.jpg">
+    </div>
+</div>
+<div id="div1" class="div1">
+    <p>科技带来美好生活，百川竭诚为您服务<span><img src="../../images/showcase/jtym3/img175.gif"></span></p>
+</div>
+<div id="div2" class="div2">
+    <div id="left" class="left">
+        <img src="../../images/showcase/jtym3/img541.gif"><span>关于我们</span><img src="../../images/showcase/jtym3/img445.gif" style="float: right;  padding-top:10px;">
+        <br>
+        <br>
+        <p> &nbsp;&nbsp;&nbsp;&nbsp;西安百川生物科技有限责任公司（原泰宇提取二厂），始建于2002年，是一家致力于动物提取物、植物提取物及天然活性有效成份的研发、生产的综合型
+            企业。其中，健康高效的动物催便机理、有机再生、无痛切割列入行业标杆典范，引领行业迈步向前。07年公司获得省先进单位奖。
+            同年，我司国内首创搭建国内天然成分发酵一体化设备平台，至今已经拥有成熟的发酵技术以及完善的化学合成车间。</p>
+
+    </div>
+    <div id="right" class="right">
+        <img src="../../images/showcase/jtym3/img541.gif"><span>新闻动态</span><img src="../../images/showcase/jtym3/img445.gif" style="float: right; padding-top:10px;">
+        <br>
+        <br>
+        <ul>
+            <li><a href="##">我刚中药通过...</a><span>2015/12/20</span> </li>
+            <li><a href="##">我公司最近完成...</a><span>2015/12/20</span> </li>
+            <li><a href="##">那是在六年前...</a><span>2015/12/20</span> </li>
+            <li><a href="##">西安百川公司...</a><span>2015/12/20</span> </li>
+            <li><a href="##">我刚才有做了...</a><span>2015/12/20</span> </li>
+        </ul>
+    </div>
+</div>
+<div id="div3" class="div3">
+    <br>
+    <p>版权所有张泽轩</p>
+    <p>此网页为了答谢我的初中同学</p>
+    <p>联系电话：45661561,216516516，,311651651,13513513505,31351303551</p>
+    <p>QQ号:6515116,32165160,316510652</p>
+    <br>
+</div>
+</body>
+</html>
